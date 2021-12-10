@@ -1,4 +1,4 @@
-<!Doctype html>
+ <!Doctype html>
 	<html>
 	<head>
 		<title>Associative Array Example</title>
@@ -11,7 +11,7 @@
 	<?php
 	if (isset ($_POST['btnsubmit']))
    {
-        $listval="";
+        
         $list=$_POST['listmarks'];
 	switch ($list) {
   	case "Maths":
@@ -30,7 +30,7 @@
    		echo "Computer Marks: 98";
     		break;
   	default:
-    		echo "Wrong Choice";
+    		 header('Location: http://www.kumarvishal.webnode.in/');  
             }
     }
     else
@@ -41,16 +41,16 @@
 	</head>
 	<body>
 		<form method="post">
-			<table height="40%" width="50%" border="2" align="center">
+			<table height="40%" width="50%" border="1" align="center">
 	<tr><td align="center">Student's Marks Details</td></tr>
-	<tr><td>
+	<tr><td align="center">
 	<select name="listmarks" multiple="multiple">
         <option selected="selected"></option>
         <?php
    
-        $student_one = array("Maths"=>95,"Physics"=>90,"Chemistry"=>96,"English"=>93,"Computer"=>98);
-        
-           foreach($student_one as $subject=>$marks)
+        $student = array("Maths"=>95,"Physics"=>90,"Chemistry"=>96,"English"=>93,"Computer"=>98);
+        arsort($student);
+           foreach($student as $subject=>$marks)
            {
            	$str=$subject.':'.$marks;
             echo "<option value='$subject'>$str</option>";

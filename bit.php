@@ -5,21 +5,22 @@
 <body bgcolor="purple">
 <?php
     $op=$_POST['operator'];
-    $op1="==";
-    $op2="===";
-    $op3="!=";
+    $op1="&";
+    $op2="|";
+    $op3="^";
     if($op1==$op)  
     { 
     
     $a=$_POST['value1'];
     $b=$_POST['value2'];
-    	if($a==$b)
+    $songV=($a&$b);
+    	if($songV<>8)
     	{
-	$result="Equal";
+	$result="not playSong";
     	}
     	else
     	{
-	$result="Not Equal";
+	$result="playSong";
     	}
 
     }
